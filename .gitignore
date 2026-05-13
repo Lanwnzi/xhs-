@@ -1,0 +1,47 @@
+# 虚拟环境
+.venv/
+venv/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# 测试 / 覆盖率
+htmlcov/
+.coverage
+coverage/
+
+# 环境变量（.env.example 是模板，需上传）
+.env
+.env.local
+
+# 运行时产物
+data/jobs/
+data/raw/
+data/normalized/
+data/outputs/
+*.log
+logs/
+
+# 私密数据（登录态、cookie、页面调试输出）
+data/private/
+*xhs_state.json
+*xhs_cookies.json
+*.state.json
+
+# 构建 / 分发
+dist/
+build/
+*.egg-info/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 前端
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local

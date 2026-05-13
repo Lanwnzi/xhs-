@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout 8 bash -c ':*)",
+      "Bash(ls:*)",
+      "Bash(python -m compileall src/agents/llm_comment_analyzer_agent.py src/agents/content_ideation_agent.py src/graph/state.py src/graph/nodes.py src/graph/graph.py src/reports/report_agent.py src/schemas/content_ideation.py src/schemas/__init__.py)",
+      "Bash(python -c \"import py_compile; py_compile.compile\\(''src/schemas/content_ideation.py'', doraise=True\\)\")",
+      "Bash(. .venv/Scripts/activate)",
+      "Bash(python -c \"import src.schemas.content_ideation; print\\(''OK''\\)\")",
+      "Bash(python -c \":*)",
+      "Bash(python -m compileall src/agents/llm_comment_analyzer_agent.py src/agents/content_ideation_agent.py)",
+      "Bash(python -m compileall src/graph/state.py src/graph/nodes.py src/graph/graph.py)",
+      "Bash(python -m compileall src/reports/report_agent.py)",
+      "Bash(python -m pytest tests/ -v --tb=short)",
+      "Bash(python -m compileall src scripts)",
+      "Bash(python scripts/acceptance_check.py)",
+      "ExecuteExtraTool",
+      "Bash(python -m compileall scripts/run_langgraph_pipeline.py scripts/run_langgraph_xhs_playwright_pipeline.py scripts/run_langgraph_experiment_batch.py src/api/services.py)",
+      "Bash(python -m compileall src/llm/client.py)",
+      "Bash(.venv/Scripts/activate.ps1)",
+      "Bash(.venv/Scripts/python.exe -m compileall src scripts)",
+      "Bash(pip install:*)",
+      "Bash(uv pip:*)",
+      "Bash(powershell -Command \".venv/Scripts/activate.ps1; python -m compileall src scripts 2>&1\")",
+      "Bash(powershell -Command \".venv/Scripts/activate.ps1; python -m pytest tests/test_llm_client.py -v 2>&1\")",
+      "Bash(powershell -Command \".venv/Scripts/activate.ps1; python -m pytest tests/test_openai_compat_llm_client.py -v 2>&1\")",
+      "Bash(source .venv/Scripts/activate)",
+      "Bash(python -m unittest tests.test_llm_client -v)",
+      "Bash(python -m unittest tests.test_openai_compat_llm_client -v)",
+      "Bash(python -m unittest tests.test_llm_comment_analyzer_agent tests.test_llm_insight_agent tests.test_llm_sentiment_agent -v)",
+      "Bash(python -m unittest tests.test_report_quality_reviewer_agent -v)"
+    ]
+  }
+}
