@@ -34,6 +34,8 @@ def ensure_browser_context(
     if not state_path:
         state_path = _STATE_PATH
 
+    os.makedirs(os.path.dirname(state_path) or ".", exist_ok=True)
+
     pw = sync_playwright()
     pw_instance = pw.__enter__()
     browser = pw_instance.chromium.launch(headless=headless)
@@ -61,6 +63,7 @@ def ensure_browser_context(
 def close_browser_context(page: Page, context, browser, pw_instance) -> None:
     """关闭 browser/context/page，保存登录态。"""
     try:
+        os.makedirs(os.path.dirname(_STATE_PATH) or ".", exist_ok=True)
         context.storage_state(path=_STATE_PATH)
     except Exception:
         pass

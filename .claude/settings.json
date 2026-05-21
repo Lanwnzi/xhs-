@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(where python *)",
+      "Bash(conda info *)",
+      "Bash(netstat -ano)",
+      "Bash(\"C:/Users/80453/Miniconda3/envs/lwz/python.exe\" -c \"import uvicorn; import fastapi; import debugpy; print\\('uvicorn:', uvicorn.__file__\\); print\\('OK'\\)\")",
+      "Bash(taskkill /PID 26032 /F)",
+      "Bash(\"C:/Users/80453/Miniconda3/envs/lwz/python.exe\" -m pip install debugpy -q)",
+      "Bash(cmd //c \"taskkill /PID 26032 /F\")"
+    ]
+  }
+}

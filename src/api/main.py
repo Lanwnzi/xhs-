@@ -92,6 +92,8 @@ def _run_job_worker(job_id: str, request: APIAnalyzeRequest) -> None:
     logger.info("worker 线程启动: job_id=%s, thread=%s, ident=%s",
                 job_id, t.name, t.ident)
     try:
+        # # breakpoint()  # 🔴 BP2: worker 线程已启动，即将进入 run_xhs_langgraph_analysis
+        # # 检查: print(job_id), pp request, import threading; print(threading.current_thread().name)
         run_xhs_langgraph_analysis(job_id, request)
         logger.info("worker 线程完成: job_id=%s", job_id)
     except Exception as exc:
@@ -156,6 +158,8 @@ def analyze(request: APIAnalyzeRequest):
     job = create_job(request)
     report_url = f"/api/reports/{job.job_id}"
 
+    # breakpoint()  # 🔴 BP1: 请求已到达，worker 线程即将启动
+    # 检查: pp request, print(job.job_id), print(job.data_root)
     _start_job_thread(job.job_id, request)
 
     return APIJobResponse(

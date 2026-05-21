@@ -235,7 +235,16 @@ def run_xhs_langgraph_analysis(job_id: str, request: APIAnalyzeRequest, jobs_roo
             request=analysis_request,
             paths=paths,
         )
+
+        # breakpoint()  # 🔴 BP3: graph.invoke 之前，所有零件已组装完毕
+        # 检查: pp analysis_request, print(paths.data_root), print(analysis_mode)
+        #       print(config), print(llm_client), pp state
         result = graph.invoke(state)
+
+        # # breakpoint()  # 🔴 BP4: graph.invoke 之后，检查执行结果
+        # 检查: pp dict(result.keys()), print(result.get("success"))
+        #       print(result.get("raw_dataset")), print(result.get("report_path"))
+        #       哪个字段是 None → 哪个节点就出了问题
 
         report_path = result.get("report_path", "")
 

@@ -56,6 +56,8 @@ def create_collect_node(
     """
 
     def collect_node(state: UGCGraphState) -> dict[str, Any]:
+        # # breakpoint()  # 🔴 BP5: 进入 collect 节点，检查 state 初始状态
+        # 检查: print(state.request.topic), print(state.paths.data_root)
         logger.info("[Graph] collect_node: 开始采集")
         if not state.request:
             raise ValueError("collect_node: state.request 为空")
