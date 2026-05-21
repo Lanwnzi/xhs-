@@ -6,11 +6,25 @@
 
 ## 项目展示
 
-![前端分析界面](assets/frontend.png)
-*前端分析界面：输入关键词、设置采集参数、提交分析任务*
+<table>
+  <tr>
+    <td width="50%"><img src="assets/feishu.png" alt="飞书机器人交互"></td>
+    <td width="50%"><img src="assets/frontend.png" alt="前端分析界面"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>飞书机器人交互</b><br>发送 "分析 关键词" 指令，自动采集分析并推送报告链接</td>
+    <td align="center"><b>前端分析界面</b><br>Web 端输入关键词、设置采集参数、提交分析任务</td>
+  </tr>
+</table>
 
-![HTML 报告](assets/report.png)
-*生成的 HTML 报告：采集概览、用户关注点、高频疑问、代表评论证据等内容*
+<table>
+  <tr>
+    <td><img src="assets/report.png" alt="HTML 报告概览"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>报告的生成报告</b><br>采集概览、评论区讨论摘要、用户核心关注点、高频疑问、评分与选题建议等 12 章内容</td>
+  </tr>
+</table>
 
 ## 功能
 
